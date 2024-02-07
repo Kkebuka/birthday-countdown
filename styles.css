@@ -1,0 +1,37 @@
+body {
+
+    margin: 0px;
+    width: 100%;
+    height: 100vh;
+    background-image: url(cakes.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+header {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.deadline {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column  ;
+    align-items: center;
+    justify-content: center;
+}
+
+.deadline-con {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.birth-con{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}

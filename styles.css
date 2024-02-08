@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+
+
 body {
 
     margin: 0px;
@@ -9,14 +15,14 @@ body {
     background-size: cover;
 }
 header {
-    margin-top: 50px;
+    padding-top: 50px;
     text-align: center;
     font-size: 2.4rem;
 }
 
 .deadline {
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column  ;
     align-items: center;
@@ -25,8 +31,11 @@ header {
 
 .deadline-con {
     width: 100%;
+    max-width: 700px;
     display: flex;
     justify-content: space-around;
+    color: aliceblue;
+    font-size: 2.8rem;
 }
 .birth-con{
     width: 100%;
@@ -34,4 +43,18 @@ header {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.deadline-time {
+    background-color: rgba(128, 128, 128, 0.39);
+    padding: 0px 2%;
+}
+
+.deadline-time > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h4 {
+    margin: 0px;
 }

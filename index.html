@@ -11,9 +11,11 @@
         <div class="deadline">
             <div class="birth-con">
                 <h2>Date of birth</h2>
-                <input id="day" type="number" required placeholder="day" >
-                <input type="number" class="month" id="month" placeholder="Mm" >
-                <input type="number" id="year" placeholder="Yr">
+                <div class="field">
+                    <input id="day" type="number" required placeholder="DD" min="1" max="31">
+                    <input type="number" class="month" id="month" placeholder="MM" min="1" max="12" >
+                    <input type="number" id="year" placeholder="YYYY" min="2024" max="2027">
+                </div>
                 <button id="submit">Submit</button>
             </div>
             <div class="deadline-con">

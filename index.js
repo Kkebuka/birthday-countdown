@@ -68,14 +68,24 @@ const items = document.querySelectorAll('.deadline-time h4');
     items.forEach(function(item, index){
         item.innerHTML = format(values[index]);
     });
-    // if(t < 0){
-        // clearInterval(countDown);
-    // 
-        // deadLine.innerHTML = `<h4 class="expired"> Sorry,this year valentine has passed</h4>`;
-    // }
-
+    if(t < 0){
+        clearInterval(countDown);
+    
+    deadLine.innerHTML = `<h4 class="expired"> Sorry,this birthday has passed</h4><button class="retry">Try Again</button>`;
+    const reTey = document.querySelector('.retry')
+    reTey.addEventListener('click', function(){
+        location.reload()
+    });
     }
+
+    };
     let countDown = setInterval(getRemainingTime, 1000);
+
+    
+    
+    
+    
+    
 
     getRemainingTime()
 

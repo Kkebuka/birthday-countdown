@@ -18,13 +18,9 @@ button.addEventListener('click', function(){
     const inputDay = document.querySelector('#day').value;
     const inputMonth = document.querySelector('#month').value;
     const inputYear = document.querySelector('#year').value;
+    const birthDetails = document.querySelector('.birth-con');
     console.log (inputDay, inputMonth, inputYear)
-
-
-
-
-
-
+    birthDetails.style.display = 'none'
 
 
 

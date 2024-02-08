@@ -41,20 +41,29 @@ header {
     justify-content: space-around;
     color: aliceblue;
     font-size: 2.8rem;
+    margin-top: 50px;
 }
 .birth-con{
-    width: 100%;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    background-color: rgba(76, 43, 26, 0.308);
 }
 h2 {
     color: rgb(0,201,222);
 }
 input {
     width: 70px;
+    height: 25px;
+}
+#submit, .retry {
+    margin: 20px 0px;
+    width: 100px;
+    height: 25px;
+    border-radius: 5px;
 }
 .deadline-time {
     background-color: rgba(128, 128, 128, 0.39);

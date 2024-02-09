@@ -19,8 +19,10 @@ button.addEventListener('click', function(){
     const inputMonth = document.querySelector('#month').value;
     const inputYear = document.querySelector('#year').value;
     const birthDetails = document.querySelector('.birth-con');
+    const birthComment = document.querySelector('h3')
     console.log (inputDay, inputMonth, inputYear)
     birthDetails.style.display = 'none'
+    birthComment.style.display = 'block'
 
 
 
@@ -67,7 +69,7 @@ const items = document.querySelectorAll('.deadline-time h4');
     if(t < 0){
         clearInterval(countDown);
     
-    deadLine.innerHTML = `<h4 class="expired"> Sorry,this birthday has passed</h4><button class="retry">Try Again</button>`;
+    deadLine.innerHTML = `<h4 class="expired"> Sorry,this birthday has passed</h4><button class="retry" >Try Again</button>`;
     const reTey = document.querySelector('.retry')
     reTey.addEventListener('click', function(){
         location.reload()

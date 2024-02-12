@@ -21,71 +21,79 @@ button.addEventListener('click', function(){
     const birthDetails = document.querySelector('.birth-con');
     const birthComment = document.querySelector('h3')
     console.log (inputDay, inputMonth, inputYear)
-    birthDetails.style.display = 'none'
-    birthComment.style.display = 'block'
-
-
-
-const deadLine =document.querySelector('.deadline')
-
-const items = document.querySelectorAll('.deadline-time h4');
- let futureDate = new Date( (inputYear), (inputMonth - 1), (inputDay), 0, 0, 0);
- console.log(futureDate);
-
- const year = futureDate.getFullYear();
- const month = futureDate.getMonth()
- const weekday = futureDate.getDay();
- const hour = futureDate.getHours();
- const minute = futureDate.getMinutes();
- const seconds = futureDate.getSeconds();
- const date = futureDate.getDate();  //this refers to the day of the month
-
- const futureTime = futureDate.getTime();
-
- const today =new Date().getTime();
-
- 
- function getRemainingTime(){
-    const today =new Date().getTime();
-    const t = futureTime - today;
-    
-    
-    const days = Math.floor(t/(24*60*60*1000));
-    const hours = Math.floor((t % (24*60*60*1000)) / (60*60*1000));
-    const minutes = Math.floor ((t % (60*60*1000) / (60*1000)));
-    const seconds = Math.floor ((t%(60*1000) / 1000));
-
-    const values = [days,hours, minutes, seconds];
-
-    function  format(item){
-        if(item < 10){
-            item = `0${item}`
-        }
-        return item;
-    }
-    items.forEach(function(item, index){
-        item.innerHTML = format(values[index]);
-    });
-    if(t < 0){
-        clearInterval(countDown);
-    
-    deadLine.innerHTML = `<h4 class="expired"> Sorry,this birthday has passed</h4><button class="retry" >Try Again</button>`;
-    const reTey = document.querySelector('.retry')
-    reTey.addEventListener('click', function(){
-        location.reload()
-    });
-    }
-
-    };
-    let countDown = setInterval(getRemainingTime, 1000);
-
-    
-    
-    
     
     
 
-    getRemainingTime()
+    if(inputDay === '' || inputDay < 1 || inputDay >= 32){
+        alert("Input the right day");
+    } else if (inputMonth === '' || inputMonth < 1 || inputMonth > 12) {
+        alert("Input a valid month");
+    } else if (inputYear === '' || inputYear < 2024 || inputYear > 2025){
+        alert("Year should be between 2024 and 2025");
+    }else{
+        birthDetails.style.display = 'none'
+        birthComment.style.display = 'block'
+        const deadLine =document.querySelector('.deadline')
+
+        const items = document.querySelectorAll('.deadline-time h4');
+         let futureDate = new Date( (inputYear), (inputMonth - 1), (inputDay), 0, 0, 0);
+         console.log(futureDate);
+
+         const year = futureDate.getFullYear();
+         const month = futureDate.getMonth()
+         const weekday = futureDate.getDay();
+         const hour = futureDate.getHours();
+         const minute = futureDate.getMinutes();
+         const seconds = futureDate.getSeconds();
+         const date = futureDate.getDate();  //this refers to the day of the month
+
+         const futureTime = futureDate.getTime();
+
+         const today =new Date().getTime();
+
+
+         function getRemainingTime(){
+            const today =new Date().getTime();
+            const t = futureTime - today;
+
+
+            const days = Math.floor(t/(24*60*60*1000));
+            const hours = Math.floor((t % (24*60*60*1000)) / (60*60*1000));
+            const minutes = Math.floor ((t % (60*60*1000) / (60*1000)));
+            const seconds = Math.floor ((t%(60*1000) / 1000));
+        
+            const values = [days,hours, minutes, seconds];
+        
+            function  format(item){
+                if(item < 10){
+                    item = `0${item}`
+                }
+                return item;
+            }
+            items.forEach(function(item, index){
+                item.innerHTML = format(values[index]);
+            });
+            if(t < 0){
+                clearInterval(countDown);
+            
+            deadLine.innerHTML = `<h4 class="expired"> Sorry,this birthday has passed</h4><button class="retry" >Try Again</button>`;
+            const reTey = document.querySelector('.retry')
+            reTey.addEventListener('click', function(){
+                location.reload()
+            });
+            }
+        
+            };
+            let countDown = setInterval(getRemainingTime, 1000);
+        
+
+
+
+
+
+        
+            getRemainingTime()
+}
 
 
 });

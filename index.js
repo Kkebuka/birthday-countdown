@@ -52,6 +52,7 @@ button.addEventListener('click', function(){
          const today =new Date().getTime();
 
 
+
          function getRemainingTime(){
             const today =new Date().getTime();
             const t = futureTime - today;
@@ -84,7 +85,15 @@ button.addEventListener('click', function(){
             }
         
             };
-            let countDown = setInterval(getRemainingTime, 1000);
+
+
+            startCountDown()
+            
+        
+
+            function startCountDown(){
+             setInterval(getRemainingTime, 1000);
+            }
         
 
 

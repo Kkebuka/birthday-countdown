@@ -4,3 +4,4 @@ Users can customize the countdown by entering their own or someone else's birthd
 it takes two easy steps
 first is to fill the input fields.
 Then click on the submit button
+if shows a message when the wrong date is entered

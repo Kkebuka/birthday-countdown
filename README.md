@@ -5,3 +5,4 @@ it takes two easy steps
 first is to fill the input fields.
 Then click on the submit button
 if shows a message when the wrong date is entered
+then you be asked to start all over by clicking a try again button

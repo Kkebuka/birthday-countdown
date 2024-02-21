@@ -2,28 +2,31 @@
 
 const form = document.querySelector('.form-submit')
 
+const reCheck = document.querySelector('#recheck');
+document.addEventListener('DOMContentLoaded',function(){
+    if(localStorage.getItem('time')){
+        const futureTime = JSON.parse(localStorage.getItem('time'));
+        console.log(futureTime);
+        getRemainingTime(futureTime);
+    }
+});
 
 form.addEventListener('submit', calculateTime);
+reCheck.addEventListener('click', checkBirthday);
 
-if(localStorage.getItem('time')){
-    
-    futureTime = JSON.parse(localStorage.getItem('time'));
-getRemainingTime(futureTime);
-
+function checkBirthday(){
+    localStorage.removeItem('time');
+    location.reload()
 }
+
+
+
 
 function calculateTime(){
     const inputDay = document.querySelector('#day').value;
     const inputMonth = document.querySelector('#month').value;
     const inputYear = document.querySelector('#year').value;
-    const birthDetails = document.querySelector('.birth-con');
-    const birthComment = document.querySelector('h3');
-    
-    
-        birthDetails.style.display = 'none'
-        birthComment.style.display = 'block'
-        
-
+   
         const items = document.querySelectorAll('.deadline-time h4');
 
          let futureDate = new Date( (inputYear), (inputMonth - 1), (inputDay), 0, 0, 0);
@@ -50,11 +53,14 @@ function calculateTime(){
 
 
 function getRemainingTime(futureTime){
+    
+    hideInput()
 
     futureTime = JSON.parse(localStorage.getItem('time'));
     
     const deadLine =document.querySelector('.deadline')
 
+    reCheck.style.display = 'block'
     let items = document.querySelectorAll('.deadline-time h4');
     
 
@@ -80,12 +86,13 @@ function getRemainingTime(futureTime){
         item.innerHTML = `0${values[index]}`;
       }
     });
-    if(t < 0){
+    if(t <= 0){
     
     deadLine.innerHTML = `<h4 class="expired"> Sorry,this birthday has passed</h4><button class="retry" >Try Again</button>`;
     const reTey = document.querySelector('.retry')
     reTey.addEventListener('click', function(){
-        location.reload()
+        location.reload();
+        localStorage.removeItem('time');
     });
     }
         
@@ -95,6 +102,16 @@ function getRemainingTime(futureTime){
     };
 
 
+    function hideInput() {
+        const birthDetails = document.querySelector('.birth-con');
+        const birthComment = document.querySelector('h3');
+        
+        
+            birthDetails.style.display = 'none'
+            birthComment.style.display = 'block'
+    }
+
+
     function startCountDown(){
-        setInterval(calculateTime, 1000);
+        setInterval(getRemainingTime, 1000);
        };

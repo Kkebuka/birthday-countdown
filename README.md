@@ -3,6 +3,7 @@ A birthday countdown website is a platform designed to help users track and cele
 Users can customize the countdown by entering their own or someone else's birthdate with ease.
 it takes two easy steps
 first is to fill the input fields.
-Then click on the submit button
-if shows a message when the wrong date is entered
-then you be asked to start all over by clicking a try again button
+Then click on the submit button.
+If done properly,the countdown timer starts immediately
+if shows a message when the wrong date is entered.
+then you be asked to start all over by clicking a try again button.
